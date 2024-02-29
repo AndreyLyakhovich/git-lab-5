@@ -173,7 +173,21 @@ git pull origin main
 
 Создал файл check_format.sh, который проверят являются ли файлы формата .txt Добавил его в пре-коммиты, дав разрешение на исполнение файла.
 
-![](https://github.com/AndreyLyakhovich/git-lab-5/blob/0d11de11ed65c5cd6f79d00b67442d327eb9a875/check_format.sh)
+'''
+#!/bin/bash
+
+for file in *; do 
+	if [[ $file != *.txt ]]
+	then 
+		echo "$file is not a .txt"
+	else 
+		if [[ $file == *.txt ]]
+		then
+			echo "$file is a .txt"
+		fi
+	fi
+done;
+'''
 
 ![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/pre-commits.jpeg)
 
