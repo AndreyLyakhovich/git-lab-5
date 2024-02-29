@@ -16,79 +16,41 @@ Git advanced workshop
 
 2. Клонирование репозитория:
 
-    Откройте терминал и перейдите в папку, где вы хотите сохранить локальную копию репозитория.
-    Введите следующие команды, используя скопированный URL:
-
-    ```
-    git clone <URL-репозитория>
-    cd git-lab
-    ```
+    ![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/clone.jpeg)
 
 3. Добавление файла:
 
-    Создайте новый текстовый файл, например, example.txt, и добавьте в него какой-то текст, например, структуру книги (главы, параграфы...)
-    Вернитесь в терминал и введите:
-
-    ```
-    git add example.txt
-    git commit -m "File added example.txt"
-    git push origin main
-    ```
+    ![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/fcommit.jpeg)
 
 4. Создание ветки:
 
-    Создайте новую ветку с названием, например, ```feature-branch```, и переключитесь на нее:
-    
-    ```
-    git branch feature-branch
-    git checkout feature-branch
-    ```
+    Создал ветку feature-branch
 
 5. Отредактируйте файл example.txt, добавив еще текст.
 
-    Повторите шаги, указанные в п. 3. Имя коммита должно отличаться!
+    Добавил отредактированный файл example.txt
 
 6. Слияние изменений:
 
-    Переключитесь обратно в основную ветку:
-    
-    ```
-    git checkout main
-    ```
-    Слейте изменения из ветки ```feature-branch``` в основную ветку:
-
-    ```
-    git merge feature-branch
-    git push origin main
-    ```
+    ![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/merge.jpeg)
 
 7. Завершение:
 
-    Проверьте, что изменения успешно слиты и отображаются в основной ветке на GitHub.
-    Завершите работу с репозиторием.
+    Изменения успешно слиты
 
 ## Работа с ветками
 
 1. Создайте новый текстовый файл с базовой структурой книги, например:
 
-```
-# Название книги
-
-## Глава 1: Введение
-Здесь будет введение в тему книги.
-
-## Глава 2: Основы Git
-Основные понятия и команды Git.
-
-```
+Создал новый текстовый файл book.txt
 
 2. Создайте ветку "feature-login" для разработки новой функциональности:
 
-```
-git checkout -b feature-login
-```
+Создал ветку feature-login
 
 3. Внесите изменения в файл:
+
+   Внёс изменения в файл book.txt
 
 ```
 # Название книги
@@ -105,11 +67,7 @@ git checkout -b feature-login
 
 4. Завершите изменения, закоммитьте их и отправьте ветку на GitHub:
 
-```
-git add README.md
-git commit -m "Добавлена глава 3: Вход в систему"
-git push origin feature-login
-```
+Закоммитил изменения
 
 ## Работа с удаленным репозиторием
 
@@ -120,6 +78,8 @@ git checkout main
 ```
 
 2. Внесите изменения в основной ветке (например, добавьте описание книги):
+
+   Изменил файл book.txt
 
 ```
 # Название книги: Приключения в мире Git
@@ -133,6 +93,8 @@ git checkout main
 ```
 
 3. Закоммитьте изменения и отправьте их на GitHub:
+
+   Закоммитил изменения и отправил на гитхаб
 
 ```
 git add <filename>
@@ -183,41 +145,21 @@ git pull origin main
 
 2. Возникнет конфликт. Разрешите его в файле
 
-```
-# Название книги: Приключения в мире Git
+Возник конфликт
 
-## Глава 1: Введение
-Здесь будет введение в удивительный мир Git.
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/conflict1.jpeg)
 
-<<<<<<< HEAD
-## Глава 2: Основы Git и магия конфликтов
-Основные понятия и команды Git, а также волшебство разрешения конфликтов.
-======= 
-## Глава 2: Основы Git
-Основные понятия и команды Git. 
->>>>>>> feature-login
-
-```
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/conflict2.jpeg)
 
 3. Разрешите конфликт, удалив метки и оставив нужные изменения:
 
-```
-# Название книги: Приключения в мире Git
+Удалил метки, разрешил конфликт
 
-## Глава 1: Введение
-Здесь будет введение в удивительный мир Git.
-
-## Глава 2: Основы Git и магия конфликтов
-Основные понятия и команды Git, а также волшебство разрешения конфликтов.
-```
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/conflictResolved.jpeg)
 
 4. Закоммитьте разрешение конфликта и отправьте изменения на GitHub:
 
-```
-git add README.md
-git commit -m "Resolved conflict in chapter 2"
-git push origin main
-```
+Закоммитил разрешение конфликта и отправил на гитхаб
 
 ## Автоматизация проверки формата файлов при коммите
 
@@ -229,33 +171,11 @@ git push origin main
 
 2. Решение
 
-  * Создайте bash-скрипт (например, check_format.sh), который будет выполнять проверку формата .txt файлов. Этот скрипт может использовать инструменты, такие как grep или другие, чтобы проверить соответствие формату.
+Создал файл check_format.sh, который проверят являются ли файлы формата .txt Добавил его в пре-коммиты, дав разрешение на исполнение файла.
 
-  * Добавление скрипта в репозиторий.
-    Поместите скрипт в папку, например, в .git/hooks и назовите его pre-commit. Убедитесь, что у него есть права на выполнение.
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/0d11de11ed65c5cd6f79d00b67442d327eb9a875/check_format.sh)
 
-    ```
-    cp check_format.sh .git/hooks/pre-commit
-    chmod +x .git/hooks/pre-commit
-
-    ```
-
-  * Попробуйте внести изменения и закоммитить.
-
-    Теперь, при каждой попытке закоммитить изменения, Git будет автоматически выполнять проверку формата файлов перед коммитом. 
-
-    ```
-    git add .
-    git commit -m "Добавлены изменения"
-
-    ```
-  * Шаг 4: Решение конфликтов (если необходимо).
-
-    Если вам необходимо внести изменения в файлы, чтобы они соответствовали формату, внесите изменения, добавьте файлы и снова попробуйте закоммитить. 
-
-3. Примечание:
-
-В данном примере использован условный синтаксис, предполагая, что у вас есть спецификация формата файла, которую можно проверить с использованием инструментов командной строки. Реальная проверка будет зависеть от конкретных требований вашего проекта.
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/pre-commits.jpeg)
 
 ## Использование Git Flow в проекте
 
@@ -268,19 +188,11 @@ git push origin main
 sudo apt-get install git-flow
 ```
 
-2. В корне репозитория выполните инициализацию Git Flow.
+2. В корне репозитория выполните инициализацию Git Flow. Создайте ветку для новой функциональности "task-management":
 
-```
-git flow init
-```
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/flow1.jpeg)
 
-3. Создайте ветку для новой функциональности "task-management":
-
-```
-git flow feature start task-management
-```
-
-4. Внесите изменения в код для добавления функционала управления задачами (например, в файл task_manager.py):
+3. Внесите изменения в код для добавления функционала управления задачами (например, в файл task_manager.py):
 
 ```
 def create_task(title, description):
@@ -290,78 +202,24 @@ def create_task(title, description):
 
 Выполните коммит изменения по мере разработки:
 
-```
-git add task_manager.py
-git commit -m "Добавлен функционал управления задачами"
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/flow2.jpeg)
 
+4. После завершения разработки функции завершите фичу и объедините ее с основной веткой:
 
-```
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/flow3.jpeg)
 
-5. После завершения разработки функции завершите фичу и объедините ее с основной веткой:
+5. Переключитесь на ветку "develop" и начните создание релиза. Внесите изменения, связанные с релизом (например, обновите версию в файле version.txt):
 
-```
-git flow feature finish task-management
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/flow4.jpeg)
 
-```
+7. Завершите релиз и объедините его с ветками "develop" и "main":
 
-Git Flow автоматически переключится на ветку develop и выполнит слияние. Если есть конфликты, их нужно разрешить.
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/flow5.jpeg)
 
-6. Переключитесь на ветку "develop" и начните создание релиза:
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/flow7.jpeg)
 
-```
-git checkout develop
-git flow release start v1.0.0
-```
+11. Завершение работы и отправка изменений на удаленный репозиторий. Отправьте изменения на удаленный репозиторий:
 
-7. Внесите изменения, связанные с релизом (например, обновите версию в файле version.txt):
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/flow8.jpeg)
 
-```
-echo "v1.0.0" > version.txt
-git add version.txt
-git commit -m "Обновлена версия для релиза v1.0.0"
-
-```
-
-8. Завершите релиз и объедините его с ветками "develop" и "main":
-
-```
-git flow release finish v1.0.0
-```
-
-9. Если в процессе использования выявлена критическая ошибка, создайте hotfix:
-
-```
-git flow hotfix start hotfix-1.0.1
-```
-
-10. Внесите изменения для исправления ошибки и коммитите:
-
-```
-# Исправление ошибки
-git add file_with_error.py
-git commit -m "Исправлена критическая ошибка"
-```
-
-11. Завершите hotfix и объедините его с ветками "develop" и "main":
-
-```
-git flow hotfix finish hotfix-1.0.1
-```
-
-12. Завершение работы и отправка изменений на удаленный репозиторий. Отправьте изменения на удаленный репозиторий:
-
-```
-git push origin develop
-git push origin main
-
-```
-## Требования к отчету:
-
-Отчет должен быть полным и отражать все выполненные действия. Подготовьте свой собственный Markdown файл, в котором будут отражены все выполненные скрипты, команды (и результат их выполнения), например скриншотами. Если необходимо представить код или алгоритм -- смотрите правила оформления Markdown-a.
-
-## Ресурсы
-
-1. [Git Documentation](https://git-scm.com/doc)
-2. [Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials)
-3. [Pro Git Book](https://git-scm.com/book/en/v2)
-4. [Markdown Guidelines](https://docs.github.com/ru/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+![](https://github.com/AndreyLyakhovich/git-lab-5/blob/0d11de11ed65c5cd6f79d00b67442d327eb9a875/report/flow9.jpeg)
