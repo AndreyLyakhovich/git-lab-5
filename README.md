@@ -209,9 +209,25 @@ sudo apt-get install git-flow
 3. Внесите изменения в код для добавления функционала управления задачами (например, в файл task_manager.py):
 
 ```
-def create_task(title, description):
-    # Логика создания задачи
-    print(f"Создана новая задача: {title}")
+print('WELCOME TO YOUR TASK MANAGER!')
+
+filename = input('What would you like your filename to be: \n(Please type \'.txt\' at the end of the name)');
+
+tasks = []
+with open(filename, 'w+') as f:
+	prompt = 'Please enter what you need to do: \n(separated by commas and a space. Ex: laundry, clean) \n When you are done puting in tasks please press enter and type \'exit\' '
+	user_input = f.write(input(prompt).strip())
+
+while (user_input != 'exit'):
+    tasks.append(user_input)
+    user_input = input(prompt).strip()
+    f.write(user_input)
+
+tasks.sort()
+
+print('\nAlphabetical order:')
+for task in tasks:
+    print(task)
 ```
 
 Выполните коммит изменения по мере разработки:
