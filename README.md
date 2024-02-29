@@ -173,7 +173,7 @@ git pull origin main
 
 Создал файл check_format.sh, который проверят являются ли файлы формата .txt Добавил его в пре-коммиты, дав разрешение на исполнение файла.
 
-'''
+```
 #!/bin/bash
 
 for file in *; do 
@@ -187,7 +187,7 @@ for file in *; do
 		fi
 	fi
 done;
-'''
+```
 
 ![](https://github.com/AndreyLyakhovich/git-lab-5/blob/5311b31e03a4147b0385163bd8a4f0a4c458e3cc/report/pre-commits.jpeg)
 
